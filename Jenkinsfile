@@ -9,7 +9,7 @@ pipeline {
         stage('Terraform Init & Apply') {
             steps {
 		bat '''
-                set PATH=%PATH%;C:\Program Files\terraform\terraform_1.10.5_windows_amd64
+                set PATH=%PATH%;C:\\Program Files\\terraform\\terraform_1.10.5_windows_amd64
 		cd terraform
                 terraform init
                 terraform apply -auto-approve
