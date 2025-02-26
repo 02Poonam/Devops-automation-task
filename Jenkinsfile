@@ -8,8 +8,9 @@ pipeline {
         }
         stage('Terraform Init & Apply') {
             steps {
-                bat 'cd terraform && terraform init'
-                bat 'cd terraform && terraform apply -auto-approve'
+                cd terraform
+                terraform init
+                terraform apply -auto-approve
             }
         }
         stage('Build Docker Image') {
