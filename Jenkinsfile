@@ -12,6 +12,7 @@ pipeline {
                 set PATH=%PATH%;C:\\Program Files\\terraform\\terraform_1.10.5_windows_amd64
 		cd terraform
                 terraform init
+                terraform plan 
                 terraform apply -auto-approve
                 '''
 	    }
