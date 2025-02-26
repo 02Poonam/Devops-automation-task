@@ -8,24 +8,32 @@ pipeline {
         }
         stage('Terraform Init & Apply') {
             steps {
+		bat '''
                 cd terraform
                 terraform init
                 terraform apply -auto-approve
-            }
+                '''
+	    }
         }
         stage('Build Docker Image') {
             steps {
-                bat 'docker build -t poonam02/devops-automation .'
+                bat '''
+		docker build -t poonam02/devops-automation .
+		'''
             }
         }
         stage('Push to ECR') {
             steps {
-                bat 'docker push 058264436164.dkr.ecr.us-west-2.amazonaws.com/pb-ecr-repo:latest'
+                bat '''
+ 		docker push 058264436164.dkr.ecr.us-west-2.amazonaws.com/pb-ecr-repo:latest
+		'''
             }
         }
         stage('Update Lambda Function') {
             steps {
-                bat 'aws lambda update-function-code --function-name ecr-function --image-uri 058264436164.dkr.ecr.us-west-2.amazonaws.com/pb-ecr-repo:latest'
+                bat '''
+		aws lambda update-function-code --function-name ecr-function --image-uri 058264436164.dkr.ecr.us-west-2.amazonaws.com/pb-ecr-repo:latest
+		'''
             }
         }
     }
