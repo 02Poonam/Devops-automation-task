@@ -1,6 +1,6 @@
 # .gitignore
 
 # Ignore Terraform's local state files and directories
-
+.terraform/
 *.tfstate
 *.tfstate.backup
