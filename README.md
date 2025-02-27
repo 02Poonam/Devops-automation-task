@@ -1,5 +1,3 @@
-# Devops-automation-task
-
 # DevOps Project with Jenkins, Terraform, and AWS
 
 ## Project Overview
