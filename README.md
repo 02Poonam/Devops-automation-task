@@ -15,6 +15,7 @@ Error: failed to refresh cached credentials, no EC2 IMDS role found
 ## Screenshots
 ### 1. Project Setup
 - Project directory structure
+
 ![img1](https://github.com/user-attachments/assets/a81a0be3-50fd-47ab-af5d-6fde8be30a20)
 
 
@@ -31,6 +32,15 @@ Error: failed to refresh cached credentials, no EC2 IMDS role found
 
 
 ### 3. Command Line Outputs
+
+- Output of Docker image build
+
+  ![image](https://github.com/user-attachments/assets/d883ce84-9114-4417-892f-a816bb209dec)
+
+- Output of creating an ECR repository and pushed the image to the ECR repository
+
+  ![image](https://github.com/user-attachments/assets/5c6f2b9a-66aa-4d44-9e0f-1879709538ee)
+  
 - Output of `terraform init`, `terraform fmt`, `terraform validate`, `terraform plan`, and `terraform apply`
 
   ![image](https://github.com/user-attachments/assets/a29cef95-037f-4df7-a322-9008565909ba)
@@ -50,13 +60,28 @@ Error: failed to refresh cached credentials, no EC2 IMDS role found
 
   ![image](https://github.com/user-attachments/assets/0908bfb3-0d70-4c4c-814b-d9598b48f1b4)
 
+### 4. AWS Console Outputs
+
+- S3 Bucket created
+
+  ![image](https://github.com/user-attachments/assets/28268b8c-a5ea-4e86-9a4a-90720266e605)
+
+- RDS created
+
+  ![image](https://github.com/user-attachments/assets/a2fb7445-3090-49e2-9dd1-0c797c445a3c)
+  
+- ECR Repository and image pushed in the repository
+
+  ![image](https://github.com/user-attachments/assets/208c8ae7-6459-464a-b2b0-0389c0f3d134)
+  
 
 ## Conclusion
-This DevOps project aimed to integrate Docker, Jenkins, AWS ECR, Lambda, S3, RDS, Glue Database, and Terraform within a CI/CD pipeline. While the infrastructure provisioning through Terraform was initiated successfully, the project encountered issues with the Jenkins pipeline configuration, specifically related to AWS credential authentication.
+This DevOps project aimed to integrate Docker, Jenkins, AWS ECR, S3, RDS, and Terraform within a CI/CD pipeline. While the infrastructure provisioning through Terraform was initiated successfully, the project encountered issues with the Jenkins pipeline configuration, specifically related to AWS credential authentication. 
 
 The screenshots included in this documentation provide:
 - Jenkins Configuration: Showcasing the jenkins pipeline configuration and the console output, which unfortunately led to an authentication error during the Terraform execution phase.
-- Command Prompt Outputs: Highlighting the execution of `terraform init`, `terraform fmt`, `terraform validate`, `terraform plan`, and `terraform apply` commands and also the AWS CLI output.
+- Command Prompt Outputs: Highlighting the command prompt outputs for Docker image build, creating an ECR repository & pushed the image to the ECR repository, and the execution of  `terraform init`, `terraform fmt`, `terraform validate`, `terraform plan`, and `terraform apply` commands and the AWS CLI output.
+- AWS Console Outputs: Showcasing the creation of the S3 Bucket, RDS database instance and the ECR Repository. 
 
 The project currently remains in a troubleshooting phase, with pending resolutions around properly accessing AWS credentials within the Jenkins pipeline. This documentation serves as a transparent record of the project's current status, challenges faced, and steps taken so far.
 
